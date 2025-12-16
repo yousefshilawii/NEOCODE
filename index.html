@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NEOCODE | Store</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">NEO</div>
+      <div class="brandText">
+        <div class="brandTitle">NEOCODE</div>
+        <div class="brandSub">Digital Services • الدفع عبر CliQ</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <input id="search" class="input" type="search" placeholder="ابحث عن منتج..." />
+      <select id="category" class="input select"></select>
+
+      <button id="openCart" class="btn btnPrimary" type="button">
+        السلة <span id="cartCount" class="badge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="heroCard">
+        <h1>NEOCODE Store</h1>
+        <p>اختار المنتج، أضفه للسلة، وحوّل المبلغ على CliQ — وبعدها أرسل صورة التحويل.</p>
+
+        <div class="heroRow">
+          <div class="pill">
+            <span class="muted">CliQ:</span>
+            <strong id="cliqText">0779713298</strong>
+            <button id="copyCliq" class="btn btnGhost" type="button">نسخ</button>
+          </div>
+          <div class="muted tiny">*التسليم بدون توصيل (رقمي/تفعيل/خدمة)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectionHead">
+      <h2>المنتجات</h2>
+      <div id="meta" class="muted"></div>
+    </section>
+
+    <section id="grid" class="grid"></section>
+  </main>
+
+  <!-- Cart Drawer -->
+  <aside id="drawer" class="drawer hidden" aria-label="Cart">
+    <div class="drawerHead">
+      <h3>سلة المشتريات</h3>
+      <button id="closeCart" class="iconBtn" type="button">✕</button>
+    </div>
+
+    <div id="cartItems" class="drawerBody"></div>
+
+    <div class="drawerFoot">
+      <div class="totals">
+        <div class="muted">الإجمالي</div>
+        <div id="total" class="total">0 JD</div>
+      </div>
+
+      <div class="checkoutCard">
+        <div class="checkoutTitle">الدفع عبر CliQ</div>
+        <div class="muted small">
+  حوّل الإجمالي على رقم CliQ التالي، ثم اكتب رقم العملية (Reference).
+  <br />
+  <strong style="color:#f7f6f5;">شرط مهم:</strong>
+  <span style="color:rgba(174,183,200,0.95);">
+    لازم تبعث مع الرسالة <strong>سكرين شوت للتحويل</strong> (إثبات الدفع)، بدونها ما بنقدر نبدأ بالطلب.
+  </span>
+</div>
+        
+        <div class="cliqBox">
+          <div>
+            <div class="muted tiny">CliQ</div>
+            <div class="cliqNumber">0779713298</div>
+          </div>
+          <button id="copyCliq2" class="btn btnGhost" type="button">نسخ الرقم</button>
+        </div>
+
+        <div class="form">
+          <input id="custName" class="input" placeholder="اسمك" />
+          <input id="custPhone" class="input" type="number" inputmode="numeric" placeholder="رقمك" />
+          <input id="custEmail" class="input" type="email" placeholder="إيميلك" />
+          <textarea id="notes" class="input textarea" placeholder="ملاحظات (اختياري)"></textarea>
+        </div>
+
+        <button id="makeMsg" class="btn btnPrimary" type="button">إنشاء رسالة الطلب</button>
+
+        <div id="msgWrap" class="msgWrap hidden">
+          <div class="muted tiny">انسخ الرسالة وأرسلها إلنا (مع سكرين التحويل إذا لزم).</div>
+          <textarea id="orderMsg" class="input textarea" readonly></textarea>
+          <div class="msgActions">
+            <button id="copyMsg" class="btn" type="button">نسخ الرسالة</button>
+            <a id="waLink" class="btn btnGhost">إرسال واتساب</a>
+          </div>
+        </div>
+        
+        <div class="muted tiny">
+  *ملاحظة: لازم ترسل <strong>سكرين شوت للتحويل</strong> مع الرسالة على واتساب، وإلا الطلب يعتبر غير مكتمل.
+</div>
+      </div>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
